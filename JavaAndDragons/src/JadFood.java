@@ -10,11 +10,11 @@ public class JadFood extends JadItem{
 		switch(itemId){
 		case 1:{
 			System.out.printf("restoring 40 health points!");
-			px.hp[0]+=40;
+			px.hp+=40;
 		}
 		}
-		if(px.hp[0]>px.hp[1]){
-			px.hp[0]=px.hp[1];
+		if(px.hp>px.hpmax){
+			px.hp=px.hpmax;
 		}
 	}
 	
