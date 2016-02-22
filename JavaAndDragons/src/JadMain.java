@@ -96,6 +96,7 @@ public class JadMain {
 					break;
 				}else{
 					System.out.println("Starting adventure...");
+					JadMap.drawMap();
 					
 					
 					
