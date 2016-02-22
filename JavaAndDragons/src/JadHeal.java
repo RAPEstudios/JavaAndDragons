@@ -1,7 +1,7 @@
 
-public class JadFood extends JadItem{
+public class JadHeal extends JadItem{
 	
-	public JadFood(){
+	public JadHeal(){
 		this.itemId=itemId;
 	}
 	
@@ -11,6 +11,9 @@ public class JadFood extends JadItem{
 		case 1:{
 			System.out.printf("restoring 40 health points!");
 			px.hp+=40;
+		}
+		case 2:{
+			System.out.printf("regenerating!");
 		}
 		}
 		if(px.hp>px.hpmax){

@@ -3,7 +3,7 @@ public class JadMain {
 	public static void main(String[] args) {
 		
 		java.util.Scanner scan = new java.util.Scanner(System.in);
-		int[][] map;
+		
 		boolean back = true;
 		String sel1, sel3;
 		int sel2;
