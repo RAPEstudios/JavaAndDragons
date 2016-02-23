@@ -44,8 +44,8 @@ public class Generate {
 					step = 1;
 					while((Math.random()<stepprob&&step<=maxSize)||step<=minSize){
 						
-						rob.x--;				//robot walks
-						tmap[rob.x][rob.y]='#'; //robot places forest-units
+						rob.x--;				
+						tmap[rob.x][rob.y]='#'; 
 						step++;
 					}
 					nxend=rob.x;
@@ -53,8 +53,8 @@ public class Generate {
 					step = 1;
 					while((Math.random()<stepprob&&step<=maxSize)||step<=minSize){
 						
-						rob.y++;				//robot walks
-						tmap[rob.x][rob.y]='#'; //robot places forest-units
+						rob.y++;				
+						tmap[rob.x][rob.y]='#';
 						step++;
 					}
 					pyend=rob.y;
@@ -62,8 +62,8 @@ public class Generate {
 					step = 1;
 					while((Math.random()<stepprob&&step<=maxSize)||step<=minSize){
 						
-						rob.y--;				//robot walks
-						tmap[rob.x][rob.y]='#'; //robot places forest-units
+						rob.y--;				
+						tmap[rob.x][rob.y]='#';
 						step++;
 					}
 					nyend=rob.y;
@@ -77,8 +77,8 @@ public class Generate {
 						rob.y++;
 						while(step<=ell(pxend-posxy,pyend-posxy,rob.y-posxy)){
 						
-							rob.x++;				//robot walks
-							tmap[rob.x][rob.y]='#'; //robot places forest-units
+							rob.x++;				
+							tmap[rob.x][rob.y]='#'; 
 							step++;
 						}
 						step = 1;
@@ -89,8 +89,8 @@ public class Generate {
 						rob.y--;
 						while(step<=ell(nxend-posxy,pyend-posxy,rob.y-posxy)){
 						
-							rob.x--;				//robot walks
-							tmap[rob.x][rob.y]='#'; //robot places forest-units
+							rob.x--;				
+							tmap[rob.x][rob.y]='#'; 
 							step++;
 						}
 						step = 1;
@@ -101,8 +101,8 @@ public class Generate {
 						rob.y--;
 						while(step<=ell(pxend-posxy,nyend-posxy,rob.y-posxy)){
 						
-							rob.x++;				//robot walks
-							tmap[rob.x][rob.y]='#'; //robot places forest-units
+							rob.x++;				
+							tmap[rob.x][rob.y]='#'; 
 							step++;
 						}
 						step = 1;
@@ -113,8 +113,8 @@ public class Generate {
 						rob.y++;
 						while(step<=ell(nxend-posxy,nyend-posxy,rob.y-posxy)){
 						
-							rob.x--;				//robot walks
-							tmap[rob.x][rob.y]='#'; //robot places forest-units
+							rob.x--;				
+							tmap[rob.x][rob.y]='#'; 
 							step++;
 						}
 						step = 1;
