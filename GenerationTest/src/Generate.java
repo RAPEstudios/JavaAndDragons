@@ -5,10 +5,9 @@ public class Generate {
 	
 		ForestRobot rob = new ForestRobot();
 		
-		int posxy = 25;
-		int rad = 20;
-		int minSize = 3;
-		int maxSize = 20;
+		int mid = 25;
+		int minSize = 5;
+		int maxSize = 25;
 		int step;
 		int pxend,nxend,pyend,nyend;
 		
@@ -22,8 +21,8 @@ public class Generate {
 				
 			}
 		}
-		tmap[posxy][posxy] = '#';
-		tmap[posxy][posxy] = '#';
+		tmap[mid][mid] = '#';
+		tmap[mid][mid] = '#';
 		generation:{
 		for (int i = 0;i<=49;i++){
 			for (int ii = 0;ii<=49;ii++){
@@ -76,7 +75,7 @@ public class Generate {
 					while(rob.y<=pyend){
 						
 						rob.y++;
-						while(step<=ell(pxend-posxy,pyend-posxy,rob.y-posxy)){
+						while(step<=ell(pxend-mid,pyend-mid,rob.y-mid)){
 						
 							rob.x++;				//robot walks
 							tmap[rob.x][rob.y]='#'; //robot places forest-units
@@ -85,10 +84,10 @@ public class Generate {
 						step = 1;
 						rob.x=ii;
 					}
-					while(rob.y>posxy){
+					while(rob.y>mid){
 						
 						rob.y--;
-						while(step<=ell(nxend-posxy,pyend-posxy,rob.y-posxy)){
+						while(step<=ell(nxend-mid,pyend-mid,rob.y-mid)){
 						
 							rob.x--;				//robot walks
 							tmap[rob.x][rob.y]='#'; //robot places forest-units
@@ -100,7 +99,7 @@ public class Generate {
 					while(rob.y>=nyend){
 						
 						rob.y--;
-						while(step<=ell(pxend-posxy,nyend-posxy,rob.y-posxy)){
+						while(step<=ell(pxend-mid,nyend-mid,rob.y-mid)){
 						
 							rob.x++;				//robot walks
 							tmap[rob.x][rob.y]='#'; //robot places forest-units
@@ -109,10 +108,10 @@ public class Generate {
 						step = 1;
 						rob.x=ii;
 					}
-					while(rob.y<posxy){
+					while(rob.y<mid){
 						
 						rob.y++;
-						while(step<=ell(nxend-posxy,nyend-posxy,rob.y-posxy)){
+						while(step<=ell(nxend-mid,nyend-mid,rob.y-mid)){
 						
 							rob.x--;				//robot walks
 							tmap[rob.x][rob.y]='#'; //robot places forest-units
@@ -120,8 +119,7 @@ public class Generate {
 						}
 						step = 1;
 						rob.x=ii;
-					}					
-					
+					}
 					
 					break generation;
 				}
@@ -146,10 +144,13 @@ public class Generate {
 	}
 	
 	public static int ell(int int_rx,int int_ry,int int_rob_y){
+		
 		double rx = Math.pow((double) int_rx, 2);
 		double ry = Math.pow((double) int_ry, 2);
 		double rob_y = Math.pow((double) int_rob_y, 2);
-		return (int)(Math.round(Math.sqrt(rx-rob_y*rx/ry)));
+		double rob_x = Math.random()*3+
+				      (Math.round(Math.sqrt(rx-rob_y*rx/ry)));
+		return (int) rob_x;
 	}
 	
 }
