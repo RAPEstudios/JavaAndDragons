@@ -117,7 +117,7 @@ public class JadMain {
 				credits.drawJavaToAscII(); // print JAVA with E-Letters
 				credits.drawAndToAscII(); // print AND with P-Letters
 				credits.drawDragonsToascII(); // print DRAGONS with R-Letters
-//				credits.printCredits(); //print the credits
+				credits.printCredits(); //print the credits
 				
 
 				System.out.println("Press any key to get back");
