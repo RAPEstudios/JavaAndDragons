@@ -140,7 +140,7 @@ public class JadMain {
 			}
 		}
 		}catch (ArrayIndexOutOfBoundsException exp) {
-			System.out.println("Here is the End of this adventure. \n we are sorry, but we are working for further adventures!");
+			System.out.println("Here is the End of this adventure. \nWe are sorry, but we are working for further adventures!");
 		
 		}catch (Exception exp) {
 			System.out.println("Something went wrong! \n PLease restart the Game");
