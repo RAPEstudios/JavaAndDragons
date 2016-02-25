@@ -2,12 +2,11 @@
 public class Generate {
 
 	public static void main(String[] args) {
-	
-		ForestRobot rob = new ForestRobot();
 		
+		int x,y;
 		int mid = 25;
-		int minSize = 5;
-		int maxSize = 25;
+		int minSize = 3;
+		int maxSize = 15;
 		int step;
 		int pxend,nxend,pyend,nyend;
 		
@@ -30,95 +29,95 @@ public class Generate {
 				
 				if(tmap[i][ii]=='#'){
 					
-					rob.x=i;
-					rob.y=ii;
+					x=i;
+					y=ii;
 					step = 1;
 					while((Math.random()<stepprob&&step<=maxSize)||step<=minSize){
 						
-						rob.x++;				//robot walks
-						tmap[rob.x][rob.y]='#'; //robot places forest-units
+						x++;				//robot walks
+						tmap[x][y]='#'; //robot places forest-units
 						step++;
 					}
-					pxend=rob.x;
-					rob.x=i;
+					pxend=x;
+					x=i;
 					step = 1;
 					while((Math.random()<stepprob&&step<=maxSize)||step<=minSize){
 						
-						rob.x--;				//robot walks
-						tmap[rob.x][rob.y]='#'; //robot places forest-units
+						x--;				//robot walks
+						tmap[x][y]='#'; //robot places forest-units
 						step++;
 					}
-					nxend=rob.x;
-					rob.x=i;
+					nxend=x;
+					x=i;
 					step = 1;
 					while((Math.random()<stepprob&&step<=maxSize)||step<=minSize){
 						
-						rob.y++;				//robot walks
-						tmap[rob.x][rob.y]='#'; //robot places forest-units
+						y++;				//robot walks
+						tmap[x][y]='#'; //robot places forest-units
 						step++;
 					}
-					pyend=rob.y;
-					rob.y=ii;
+					pyend=y;
+					y=ii;
 					step = 1;
 					while((Math.random()<stepprob&&step<=maxSize)||step<=minSize){
 						
-						rob.y--;				//robot walks
-						tmap[rob.x][rob.y]='#'; //robot places forest-units
+						y--;				//robot walks
+						tmap[x][y]='#'; //robot places forest-units
 						step++;
 					}
-					nyend=rob.y;
-					rob.y=ii;
+					nyend=y;
+					y=ii;
 					step = 1;
 					
 					//adding ellipse-corners
 					
-					while(rob.y<=pyend){
+					while(y<=pyend){
 						
-						rob.y++;
-						while(step<=ell(pxend-mid,pyend-mid,rob.y-mid)){
+						y++;
+						while(step<=ell(pxend-mid,pyend-mid,y-mid)){
 						
-							rob.x++;				//robot walks
-							tmap[rob.x][rob.y]='#'; //robot places forest-units
+							x++;				//robot walks
+							tmap[x][y]='#'; //robot places forest-units
 							step++;
 						}
 						step = 1;
-						rob.x=ii;
+						x=ii;
 					}
-					while(rob.y>mid){
+					while(y>mid){
 						
-						rob.y--;
-						while(step<=ell(nxend-mid,pyend-mid,rob.y-mid)){
+						y--;
+						while(step<=ell(nxend-mid,pyend-mid,y-mid)){
 						
-							rob.x--;				//robot walks
-							tmap[rob.x][rob.y]='#'; //robot places forest-units
+							x--;				//robot walks
+							tmap[x][y]='#'; //robot places forest-units
 							step++;
 						}
 						step = 1;
-						rob.x=ii;
+						x=ii;
 					}
-					while(rob.y>=nyend){
+					while(y>=nyend){
 						
-						rob.y--;
-						while(step<=ell(pxend-mid,nyend-mid,rob.y-mid)){
+						y--;
+						while(step<=ell(pxend-mid,nyend-mid,y-mid)){
 						
-							rob.x++;				//robot walks
-							tmap[rob.x][rob.y]='#'; //robot places forest-units
+							x++;				//robot walks
+							tmap[x][y]='#'; //robot places forest-units
 							step++;
 						}
 						step = 1;
-						rob.x=ii;
+						x=ii;
 					}
-					while(rob.y<mid){
+					while(y<mid){
 						
-						rob.y++;
-						while(step<=ell(nxend-mid,nyend-mid,rob.y-mid)){
+						y++;
+						while(step<=ell(nxend-mid,nyend-mid,y-mid)){
 						
-							rob.x--;				//robot walks
-							tmap[rob.x][rob.y]='#'; //robot places forest-units
+							x--;				//robot walks
+							tmap[x][y]='#'; //robot places forest-units
 							step++;
 						}
 						step = 1;
-						rob.x=ii;
+						x=ii;
 					}
 					
 					break generation;
