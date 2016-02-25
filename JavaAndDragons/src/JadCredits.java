@@ -12,11 +12,11 @@ public class JadCredits implements Runnable {
 
 		BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		Graphics g = image.getGraphics();
-		g.setFont(new Font("SansSerif", Font.BOLD, 16));
+		g.setFont(new Font("SansSerif", Font.BOLD, 10));
 
 		Graphics2D graphics = (Graphics2D) g;
 		graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-		graphics.drawString("JAVA", 10, 20);
+		graphics.drawString("JAVA", 5, 10);
 
 		for (int i = 0; i < height; i++) {
 			StringBuilder sb = new StringBuilder();
@@ -38,11 +38,11 @@ public class JadCredits implements Runnable {
 
 		BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		Graphics g = image.getGraphics();
-		g.setFont(new Font("SansSerif", Font.BOLD, 16));
+		g.setFont(new Font("SansSerif", Font.BOLD, 10));
 
 		Graphics2D graphics = (Graphics2D) g;
 		graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-		graphics.drawString("AND", 10, 20);
+		graphics.drawString("AND", 5, 10);
 
 		for (int i = 0; i < height; i++) {
 			StringBuilder sb = new StringBuilder();
@@ -65,11 +65,11 @@ public class JadCredits implements Runnable {
 
 		BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		Graphics g = image.getGraphics();
-		g.setFont(new Font("SansSerif", Font.BOLD, 16));
+		g.setFont(new Font("SansSerif", Font.BOLD, 10));
 
 		Graphics2D graphics = (Graphics2D) g;
 		graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-		graphics.drawString("DRAGONS", 10, 20);
+		graphics.drawString("DRAGONS", 5, 10);
 
 		for (int i = 0; i < height; i++) {
 			StringBuilder sb = new StringBuilder();

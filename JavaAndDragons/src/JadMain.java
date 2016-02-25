@@ -3,7 +3,7 @@ import java.io.IOException;
 public class JadMain {
 
 	public static void main(String[] args) {
-		
+		try {
 		JadCredits credits = new JadCredits();
 
 		java.util.Scanner scan = new java.util.Scanner(System.in);
@@ -19,9 +19,11 @@ public class JadMain {
 
 		while (true) {
 			if (back) {
-				System.out.println("-----------------------------\n" + " Welcome to Java and Dragons \n"
-						+ "-----------------------------\n" + "(s) Start\n" + "(o) Options\n" + "(c) Credits\n"
-						+ "(e) Exit");
+				System.out.println(	"-----------------------------\n" 
+									+ " Welcome to Java and Dragons \n"
+									+ "-----------------------------\n" 
+									+ "(s) Start\n" + "(o) Options\n" + "(c) Credits\n"
+									+ "(e) Exit");
 				back = false;
 			}
 
@@ -137,7 +139,13 @@ public class JadMain {
 
 			}
 		}
-
+		}catch (ArrayIndexOutOfBoundsException exp) {
+			System.out.println("Here is the End of this adventure. \nWe are sorry, but we are working for further adventures!");
+		
+		}catch (Exception exp) {
+			System.out.println("Something went wrong! \n PLease restart the Game");
+		}
 	}
+	
 
 }
