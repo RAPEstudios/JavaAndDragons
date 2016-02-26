@@ -11,6 +11,7 @@ public class JadMain {
 		boolean back = true;
 		String sel1, sel3;
 		int sel2;
+		int selDial;
 
 		JadPlayer p1 = new JadPlayer();
 		JadPlayer p2 = new JadPlayer();
@@ -46,9 +47,13 @@ public class JadMain {
 						sel1 = scan.nextLine();
 					}
 
-					System.out.println("-----------------------------\n" + " Please choose a class, " + sel1 + "!\n"
-							+ "-----------------------------\n" + "(0) Warrior\n" + "(1) Archer\n" + "(2) Wizard\n"
-							+ "(3) Rogue");
+					System.out.println(		"-----------------------------\n" 
+											+ " Please choose a class, " + sel1 + "!\n"
+											+ "-----------------------------\n" 
+											+ "(0) Warrior\n" 
+											+ "(1) Archer\n" 
+											+ "(2) Wizard\n"
+											+ "(3) Rogue");
 					sel3 = scan.nextLine();
 					while (!(sel3.equals("0") || sel3.equals("1") || sel3.equals("2") || sel3.equals("3"))) {
 						System.out.println("Please choose a whole number from 0 to 3 to select!");
@@ -102,11 +107,64 @@ public class JadMain {
 					break;
 				} else {
 					System.out.println("Starting adventure...");
-					JadMap.drawMap();
+					System.out.println("First you meet your first merchant. He gives you an axe");
+					
+					switch(sel2) {
+					case 4: {
+						System.out.printf("Merchant: What is your mission in this forest %s %s %s %s? \n", p1.name, p2.name, p3.name, p4.name);
+						System.out.println("\t (1) We are going to see, what life is about");
+						System.out.println("\t (2) We want to start an adventure");
+						break;
+					}
+					case 3: {
+						System.out.printf("Merchant: What is your mission in this forest %s %s %s? \n", p1.name, p2.name, p3.name);
+						System.out.println("\t (1) We are going to see, what life is about");
+						System.out.println("\t (2) We want to start an adventure");
+						break;
+						
+					}
+					case 2: {
+						System.out.printf("Merchant: What is your mission in this forest %s %s? \n", p1.name, p2.name);
+						System.out.println("\t (1) We are going to see, what life is about");
+						System.out.println("\t (2) We want to start an adventure");
+						break;
+						
+					}
+					case 1: {
+						System.out.printf("Merchant: What is your mission in this forest %s? \n", p1.name);
+						System.out.println("\t (1) I am going to see, what life is about.");
+						System.out.println("\t (2) I want to start an adventure.");
+						System.out.println("\t (3) I want to explore the forest.");
+						break;
+					}
+					}
 
 				}
 
-				break; // end of menu-case start
+				sel1 = scan.nextLine();
+				while (!(Integer.parseInt(sel1) == 1|| Integer.parseInt(sel1) == 2 || Integer.parseInt(sel1) == 3)) {
+					System.out.println("Please select the number of what you want to say!");
+					sel1 = scan.nextLine();
+				}
+				selDial = Integer.parseInt(sel1);
+
+				switch (selDial) {
+				case 1: {
+					System.out.println("%s are going to see, what life is about. \n");
+					break;
+				}
+				case 2: {
+					System.out.println("%s want to start an adventure.\n");
+					break;
+				}
+				case 3: {
+					System.out.println("I want to explore the forest. \n ");
+					break;
+				}
+				}
+				System.out.println(JadDialog.DialogTest1.FirstResponse(selDial)); // says what the merchant answeres
+				throw new ArrayIndexOutOfBoundsException();
+				
 			}
 			case 'o': {
 				System.out.println("Work in Progress =)\n" + "(any letter) Back");
@@ -140,10 +198,10 @@ public class JadMain {
 			}
 		}
 		}catch (ArrayIndexOutOfBoundsException exp) {
-			System.out.println("Here is the End of this adventure. \nWe are sorry, but we are working for further adventures!");
+			System.out.println("\n \n Here is the End of this adventure. \nWe are sorry, but we are working for further adventures!");
 		
 		}catch (Exception exp) {
-			System.out.println("Something went wrong! \n PLease restart the Game");
+			System.out.println("Something went wrong! \n Please restart the Game");
 		}
 	}
 	

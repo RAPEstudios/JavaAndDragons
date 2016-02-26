@@ -94,19 +94,19 @@ public class JadCredits implements Runnable {
 		int sleepTime = 2000;
 
 		try {
-			System.out.println(JadLanguage.Deutsch.gameName);
+			System.out.println(JadDialog.CreditsEnglish.gameName);
 			Thread.sleep(sleepTime);
 			System.out.println("is presented by");
 			Thread.sleep(sleepTime);
-			System.out.println(JadLanguage.Deutsch.rapeStudios);
+			System.out.println(JadDialog.CreditsEnglish.rapeStudios);
 			Thread.sleep(sleepTime);
 			System.out.println("programmed by");
 			Thread.sleep(sleepTime);
-			System.out.println(JadLanguage.Deutsch.firstProgrammer);
+			System.out.println(JadDialog.CreditsEnglish.firstProgrammer);
 			Thread.sleep(sleepTime);
 			System.out.println("and by");
 			Thread.sleep(sleepTime);
-			System.out.println(JadLanguage.Deutsch.secondProgrammer);
+			System.out.println(JadDialog.CreditsEnglish.secondProgrammer);
 			Thread.sleep(sleepTime);
 
 		} catch (InterruptedException e) {
