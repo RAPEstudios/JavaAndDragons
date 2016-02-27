@@ -3,7 +3,7 @@ import java.io.IOException;
 public class JadMain {
 
 	public static void main(String[] args) {
-		try {
+	//	try {
 		JadCredits credits = new JadCredits();
 
 		java.util.Scanner scan = new java.util.Scanner(System.in);
@@ -17,7 +17,7 @@ public class JadMain {
 		JadPlayer p2 = new JadPlayer();
 		JadPlayer p3 = new JadPlayer();
 		JadPlayer p4 = new JadPlayer();
-
+		
 		while (true) {
 			if (back) {
 				System.out.println(	"-----------------------------\n" 
@@ -163,7 +163,9 @@ public class JadMain {
 				}
 				}
 				System.out.println(JadDialog.DialogTest1.FirstResponse(selDial)); // says what the merchant answeres
-				throw new ArrayIndexOutOfBoundsException();
+				JadMap.drawMap();
+	//			throw new ArrayIndexOutOfBoundsException();
+				continue;
 				
 			}
 			case 'o': {
@@ -197,12 +199,12 @@ public class JadMain {
 
 			}
 		}
-		}catch (ArrayIndexOutOfBoundsException exp) {
-			System.out.println("\n \n Here is the End of this adventure. \nWe are sorry, but we are working for further adventures!");
-		
-		}catch (Exception exp) {
-			System.out.println("Something went wrong! \n Please restart the Game");
-		}
+//		}catch (ArrayIndexOutOfBoundsException exp) {
+//			System.out.println("\n \n Here is the End of this adventure. \nWe are sorry, but we are working for further adventures!");
+//		
+//		}catch (Exception exp) {
+//			System.out.println("Something went wrong! \n Please restart the Game");
+//		}
 	}
 	
 

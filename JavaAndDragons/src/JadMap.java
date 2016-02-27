@@ -6,57 +6,87 @@ public class JadMap {
 	public static void drawMap() {
 		int rGen;
 		
+		
+		
 		//map generation
-		for (int i = 0;i<=1000;i++){
-			for (int ii = 0;ii<=1000;ii++){
+		for (int i = 0;i<1000;i++){
+			for (int ii = 0;ii<1000;ii++){
 				
 				rGen = (int) (Math.random()*10000);
 				
 				//map marks for:
-				if(rGen<100){
+				if(rGen<20){
 					map[i][ii] = -2; //2: forest
 				}
-				else if(rGen<200){
+				else if(rGen<30){
 					map[i][ii] = -3; //3: tall grass
 				}
-				else if(rGen<300){
+				else if(rGen<50){
 					map[i][ii] = -4; //4: lake
 				}
-				else if(rGen<310){
+				else if(rGen<55){
 					map[i][ii] = -5; //5: village
 				}
-				else if(rGen<305){
+				else if(rGen<60){
 					map[i][ii] = -6; //6: dungeon
 				}
 				else{
-					map[i][ii] = -1; //1: grass (regular terrain)
+					map[i][ii] = 1; //1: grass (regular terrain)
 				}
 			}
 			map[i][0]= 0; 			//0: end of map
-			map[i][1000]= 0;
+			map[i][999]= 0;
 			map[0][i]= 0;
-			map[1000][i]= 0;
+			map[999][i]= 0;
 			
 			
 			
 			
 		}
+		drawStructure(-3,6,2,5);
+		drawStructure(-2,15,5,3);
+		drawStructure(-4,6,2,1);
 		
-		drawStructure(2,15,5,3);
+		//just for a better view of the map
 		
-		for (int i = 49;i>-1;i--){
-				for (int ii = 0;ii<=49;ii++){
+		for (int i = 0;i<50;i++){
+			for (int ii = 0;ii<50;ii++){
 					
+				switch(map[ii][i]){
+				case 2:{
+					System.out.print('#'+" ");
+					break;
+				}
+				case 3:{
+					System.out.print('/'+" ");
+					break;
+				}
+				case 4:{
+					System.out.print('~'+" ");
+					break;
+				}
+				
+				//villages and dungeons (marked as -5 and -6) are not being displayed right now
+				case -5:{
+					System.out.print(1+" ");
+					break;
+				}
+				case -6:{
+					System.out.print(1+" ");
+					break;
+				}
+				default:
 					System.out.print(map[ii][i]+" ");
-					
+				}
 				}
 				System.out.print("\n");
 			}
-		
-	}	
+		}
+	
 		//map structure generator
-	public static int[][] drawStructure(int type, int maxSize, int minSize, int rand_factor){
+	public static int[][] drawStructure(int marktype, int maxSize, int minSize, int rand_factor){
 		
+		int type = marktype*(-1);
 		int x,y,mid_x,mid_y;
 		int pxend,nxend,pyend,nyend,step;
 		double stepprob = 0.8;
@@ -65,17 +95,21 @@ public class JadMap {
 			for (int ii = 0;ii<=49;ii++){
 
 				
-				if(map[i][ii]==type){
+				if(map[i][ii]==marktype){
 					
 					mid_x = x = i;
 					mid_y = y = ii;
 					step = 1;
+					
+					map[x][y]=type;
+					
 					while((Math.random()<stepprob&&step<=maxSize)||step<=minSize){
 						
-						x++;			//robot walks
+						x++;//robot walks
 						if(map[x][y]==0){
 							break;
 						}
+						
 						map[x][y]=type; //robot places forest-units
 						step++;
 					}
@@ -134,7 +168,7 @@ public class JadMap {
 							step++;
 						}
 						step = 1;
-						x=ii;
+						x=i;
 					}
 					while(y>mid_y){
 						
@@ -149,11 +183,14 @@ public class JadMap {
 							step++;
 						}
 						step = 1;
-						x=ii;
+						x=i;
 					}
 					while(y>=nyend){
 						
 						y--;
+						if(map[x][y]==0){
+							break;
+						}
 						while(step<=Math.random()*rand_factor+ell(pxend-mid_x,nyend-mid_y,y-mid_y)){
 						
 							x++;				//robot walks
@@ -164,7 +201,7 @@ public class JadMap {
 							step++;
 						}
 						step = 1;
-						x=ii;
+						x=i;
 					}
 					while(y<mid_y){
 						
@@ -179,7 +216,7 @@ public class JadMap {
 							step++;
 						}
 						step = 1;
-						x=ii;
+						x=i;
 					}	
 				}
 			}
