@@ -16,7 +16,7 @@ public final class JadDialog {
 	public static final class DialogTest1{
 		
 		public static final String[] itemDescription = {"The axe is a tool to break trees", "The coin is the currency.", "This is your map. It takes you to several adventures!"}; //saves the itemDescription
-		public static final String[] firstResponse = {"You are such a fool!", "Great idea!", "Without me!"}; //saves the first testDialog (with merchant)
+		public static final String[] firstResponse = {"You are such a fool! Good Luck! Here you have the map of the forest.", "Great idea! Here is the map of the forest.", "Without me! But good luck! Here you get the map of the forest."}; //saves the first testDialog (with merchant)
 		
 		public static String FirstResponse(int number) {
 			return DialogTest1.firstResponse[number-1];
