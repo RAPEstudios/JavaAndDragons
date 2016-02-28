@@ -33,7 +33,7 @@ public final class JadDialog {
 		public static final String[] firstResponse = {"You are such a fool! Good Luck! Here you have the map of the forest.", "Great idea! Here is the map of the forest.", "Without me! But good luck! Here you get the map of the forest."}; //saves the first testDialog (with merchant)
 		
 		public static int OptionDialog(){
-			
+			return 3;
 		}
 		
 		
