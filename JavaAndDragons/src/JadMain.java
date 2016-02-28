@@ -29,7 +29,7 @@ public class JadMain {
 			}
 			
 			
-			System.out.println("test123");
+			System.out.println("test456");
 
 			switch (scan.nextLine().charAt(0)) {
 			case 's': {
