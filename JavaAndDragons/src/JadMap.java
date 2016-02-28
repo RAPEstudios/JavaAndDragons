@@ -83,7 +83,10 @@ public class JadMap {
 			}
 		}
 	
-		//map structure generator
+	//map structure generator
+		
+	//creates a random-sized spherical structure on the map because why not
+	
 	public static int[][] drawStructure(int marktype, int maxSize, int minSize, int rand_factor){
 		
 		int type = marktype*(-1);
