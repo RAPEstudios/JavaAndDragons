@@ -15,7 +15,12 @@ public final class JadDialog {
 	}
 	public static final class DialogTest1{
 		
-		public static final String menuDial = "ddd";
+		public static final String menuDial = (	"-----------------------------\n" 
+				+ " Welcome to Java and Dragons \n"
+				+ "-----------------------------\n" 
+				+ "(s) Start\n" + "(o) Options\n" + "(c) Credits\n"
+				+ "(e) Exit");
+				
 				
 				
 				
