@@ -15,19 +15,8 @@ public final class JadDialog {
 	}
 	public static final class DialogTest1{
 		
-		public static final String menuDial = (	"-----------------------------\n" 
-				+ " Welcome to Java and Dragons \n"
-				+ "-----------------------------\n" 
-				+ "(s) Start\n" + "(o) Options\n" + "(c) Credits\n"
-				+ "(e) Exit");
-				
-				
-				
-				
-				
-				
-				
-				
+		public static final String menuDial = "Welcome to Java And Dragons!";
+		public        final String classDial1 = " Please choose a class, ";
 				
 		public static final String[] itemDescription = {"The axe is a tool to break trees", "The coin is the currency.", "This is your map. It takes you to several adventures!"}; //saves the itemDescription
 		public static final String[] firstResponse = {"You are such a fool! Good Luck! Here you have the map of the forest.", "Great idea! Here is the map of the forest.", "Without me! But good luck! Here you get the map of the forest."}; //saves the first testDialog (with merchant)
@@ -42,6 +31,19 @@ public final class JadDialog {
 		}
 	}
 	
-	
+	public static String selectionMenu(String title, String ...option){
+		
+		String s = "-----------------------------\n"
+				 + " " + title + "\n"
+				 + "-----------------------------\n";
+		
+		int i = 0;
+		for (String o:option){
+			s.concat("\n("+(i++)+")"+o);
+		}
+		
+		return s;
+		
+	}
 
 }

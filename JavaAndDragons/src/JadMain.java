@@ -27,9 +27,6 @@ public class JadMain {
 									+ "(e) Exit");
 				back = false;
 			}
-			
-			
-			System.out.println("test456");
 
 			switch (scan.nextLine().charAt(0)) {
 			case 's': {
