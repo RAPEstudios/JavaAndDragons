@@ -28,7 +28,8 @@ public class JadMain {
 				back = false;
 			}
 			
-			System.out.flush();
+			
+			System.out.println("test321");
 
 			switch (scan.nextLine().charAt(0)) {
 			case 's': {
